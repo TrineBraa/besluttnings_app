@@ -10,8 +10,8 @@ const EndPage = ({ choices, setPoints, setPointsPerClick }) => {
   const audioRef = useRef(new Audio(audioFile));
 
   useEffect(() => {
-    audioRef.current.volume = 0.02;
-
+    audioRef.current.volume = 0.2;
+    
     let randomNumber = Math.floor(Math.random() * choicesArray.length);
     setMainChoice(choices[randomNumber]);
     audioRef.current.play();
@@ -27,9 +27,9 @@ const EndPage = ({ choices, setPoints, setPointsPerClick }) => {
         Your choice is: {mainChoice} 
       </h1>
       <img src={img1} alt="hehexd" className="w-48 h-48 mb-8 animate-bounce" />
-      <div className="h-3/4 w-full overflow-hidden flex flex-col items-center">
-        <div className="flex flex-col-reverse animate-bounce-push space-y-2 text-center text-lg">
-          <Credits choicesArray={choices.reverse()} />
+      <div className="h-3/4 w-full overflow-hidden">
+        <div className="animate-roll space-y-12 text-center text-lg">
+          <Credits choicesArray={choices} />
         </div>
       </div>
       <div className="mt-auto mb-4">
